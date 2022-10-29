@@ -1,4 +1,4 @@
-<h1>Hello World!</h1>
+
 <html>
 
     <script src="//d.bablic.com/snippet/6288d4c3c4c5800001a91242.js?version=3.9"></script>
@@ -28,7 +28,8 @@
                   <button type="submit" class="btn btn-primary">Add Task</button>
                 </div>
               </form>
-              <a href="{% url 'logout' %}"><button style="background: firebrick; color: white;" type="submit" class="btn btn-primary">Logout</button></a>
+              {% comment %} #{% url 'logout' %} {% endcomment %}
+              <a href="#"><button style="background: firebrick; color: white;" type="submit" class="btn btn-primary">Logout</button></a>
               <table class="table mb-4">
                 <thead>
                   <tr>
