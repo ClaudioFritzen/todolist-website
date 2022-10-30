@@ -28,10 +28,28 @@ def register(request):
         # se as validações estiverem ok, save no db.
         new_user = User.objects.create_user(username=username, email=email, password=password)
         new_user.save()
-
+        
+        # mostrar mms de usuario criado.
+        messages.success(request, 'Usuario criado com sucesso, faça login')
+        # apos salvar no db vamos para a pag de login
+        return redirect('login')
 
         #print(username, email, password)
     return render(request, 'todoapp/register.html', {})
 
 def loginpage(request):
+    if request.method == 'POST':
+        username = request.POST.get('uname')
+        password = request.POST.get('pass')
+
+        # fazendo a validacao de autenticcao no db
+        validate_user = authenticate(username=username, password=password)
+        if validate_user is not None:
+            login(request, validate_user)
+            return redirect('home-page')
+
+        else:
+            messages.error(request, 'Usuario ou senha estão errado!')
+            return redirect('login')
+
     return render(request, 'todoapp/login.html', {})
