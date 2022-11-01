@@ -11,7 +11,13 @@ def home(request):
         task = request.POST.get('task')
         new_todo = todo(user=request.user, todo_name=task )
         new_todo.save()
-    return render(request, 'todoapp/todo.html', {})
+
+    # fazer pesquisa em todas as tarefas
+    all_todos = todo.objects.filter(user=request.user)
+    context = {
+        'todos': all_todos
+    }
+    return render(request, 'todoapp/todo.html', context)
 
 def register(request):
     if request.method == 'POST':
