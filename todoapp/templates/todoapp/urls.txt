@@ -1,2 +1,0 @@
-<!-- {% url 'delete' i.todo_name %} -->
-<!-- {% url 'update' i.todo_name %} -->

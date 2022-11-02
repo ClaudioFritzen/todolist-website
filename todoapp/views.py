@@ -64,3 +64,11 @@ def loginpage(request):
             return redirect('login')
 
     return render(request, 'todoapp/login.html', {})
+
+def DeleteTask(request, name):
+    get_todo = todo.objects.get(user=request.user, todo_name=name)
+    get_todo.delete()
+    return redirect('home-page')
+
+def Update(request, name):
+    pass
