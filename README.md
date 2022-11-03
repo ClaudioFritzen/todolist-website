@@ -45,6 +45,9 @@ Projeto FullStack utilizando as tecnologias HTML, Python e Django
     ABAIXO ESCREVA
         django_heroku.settings(locals())
 
-7. Baixar o github
+7. Baixar o git
 8. Criar uma conta no Heroku
 9. Criar um app no Heroku
+10. Criar uma conta no github
+11. Criar um repostitório no github
+12. Voltar no heroku e fazer deploy via github
