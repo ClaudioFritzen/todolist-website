@@ -1,1 +1,1 @@
-web: gunicorn todocf.wsgi
+web gunicorn todocf.wsgi:application --log-file -
