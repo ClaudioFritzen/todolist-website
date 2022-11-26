@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-pqxh-6d#26tgplaz_)br0el^#n@@1qy624w**jt@-71+=^4sjz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,16 +123,18 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# arquivos para deploy
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates')
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# arquivos para deploy
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 
 LOGIN_URL = 'login'
