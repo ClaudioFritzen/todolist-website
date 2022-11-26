@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # arquivos para deploy
-STATIC_ROOT = os.path.join(BASE_DIR, 'templates')
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates/static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 

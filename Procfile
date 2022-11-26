@@ -1,1 +1,2 @@
-web gunicorn todocf.wsgi:application --log-file -
+
+web: python manage.py migrate && gunicorn todocf.py.wsgi
