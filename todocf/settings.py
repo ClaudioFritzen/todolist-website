@@ -31,7 +31,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['todolist-website-production.up.railway.app/','127.0.0.1']
 
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todoapp',
-    'static',
+    
 ]
 
 MIDDLEWARE = [
